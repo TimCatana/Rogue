@@ -1,0 +1,179 @@
+{
+    "room": [{
+            "id": 1,
+            "start": true,
+            "height": 10,
+            "width": 20,
+            "doors": [{
+                "dir": "N",
+                "con_room": 2,
+                "wall_pos": 20
+            },
+            {
+                "dir": "S",
+                "con_room": 2,
+                "wall_pos": 6
+            },
+            {
+                "dir": "E",
+                "con_room": 2,
+                "wall_pos": 4
+            },
+            {
+                "dir": "W",
+                "con_room": 2,
+                "wall_pos": 6
+            }
+            
+        ],
+            "loot": [{
+                    "id": 11,
+                    "x": 100,
+                    "y": 3
+                },
+                {
+                    "id": 1,
+                    "x": 1,
+                    "y": 1
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "start": false,
+            "height": 10,
+            "width": 20,
+            "doors": [
+                {
+                    "dir": "N",
+                    "con_room": 1,
+                    "wall_pos": 2
+                },
+                {
+                    "dir": "S",
+                    "con_room": 1,
+                    "wall_pos": 6
+                },
+                {
+                    "dir": "E",
+                    "con_room": 1,
+                    "wall_pos": 2
+                }
+            ],
+            "loot": [
+            {
+                    "id": 4,
+                    "x": 7,
+                    "y": 8
+                },
+            {
+                    "id": 35,
+                    "x": 3,
+                    "y": 6
+                },
+                {
+                    "id": 1,
+                    "x": 3,
+                    "y": 6
+                } ,
+                {
+                    "id": 3,
+                    "x": 7,
+                    "y": 5
+                } ,
+                {
+                    "id": 4,
+                    "x": 0,
+                    "y": 1
+                } ,
+                {
+                    "id": 10,
+                    "x": 3,
+                    "y": 6
+                } 
+            ]
+        },
+        {
+            "id": 3,
+            "start": true,
+            "height": 10,
+            "width": 20,
+            "doors": [
+        ],
+            "loot": [{
+                    "id": 11,
+                    "x": 100,
+                    "y": 3
+                },
+                {
+                    "id": 1,
+                    "x": 8,
+                    "y": 8
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "start": true,
+            "height": 10,
+            "width": 6,
+            "doors": [
+        ],
+            "loot": [{
+                    "id": 11,
+                    "x": 100,
+                    "y": 3
+                },
+                {
+                    "id": 1,
+                    "x": 8,
+                    "y": 8
+                },
+                {
+                    "id": 1,
+                    "x": 8,
+                    "y": 8
+                }
+            ]
+        }
+    ],
+    "items": [{
+            "id": 1,
+            "name": "Health Potion",
+            "type": "potion",
+            "description":"you feel better"
+        },
+        {
+            "id": 2,
+            "name": "Scroll of Fireball",
+            "type": "scroll",
+            "description":"A 20 foot ball of flame hurtles away from you"
+        },
+        {
+            "id": 3,
+            "name": "Iron Helmet",
+            "type": "armour",
+            "description": "you have a large helmet on your head"
+        },
+        {
+            "id": 4,
+            "name": "Mango",
+            "type": "food",
+            "description": "my that was a yummy mango!"
+        },
+        {
+            "id": 35,
+            "name": "6 gold",
+            "type": "gold",
+            "description": "you found 6 gold pieces"
+        },
+        
+        {
+            "id": 10,
+            "name": "10 gold",
+            "type": "gold",
+            "description": "you found 10 gold pieces"
+        }
+        
+    ]
+}

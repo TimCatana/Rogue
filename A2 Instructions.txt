@@ -1,0 +1,178 @@
+A2 Big Picture
+
+Once you have finished this assignment you will have improved the design of your program through refactoring, 
+ will have created javadoc comments for any public methods, and will have implemented movement for the player 
+ both within a room and between rooms, and will have the beginnings of an inventory system. 
+
+A2 is presented as a set of four steps.  Work through them in sequence.
+
+✔✔✔ A2 Step One: New Classes and Repo setup
+    
+ ✔✔   Create an A2 branch based off of your final A1 branch
+  ✔      First ensure that you have the correct final branch checked out
+    ✔        git checkout A1 (or whatever branch has the code you want to start from)
+  ✔      Then create your A2 branch
+    ✔        git checkout -b A2
+
+ ✔✔   Copy the files provided with this assignment description into the correct places in your new branch
+    ✔    build.gradle should replace your original build.gradle file
+    ✔    TextUI.java should go in your src/main/java/rogue folder
+     ✔   checkstyle.xml should go in  a new folder called config/checkstyle that is just off the root of your project
+
+  ✔✔  Add the new files to git with git add <filename>.  commit and push.
+   ✔     NOT RECOMMENDED to git add .
+
+✔ Type gradle build at the command line.  It will probably fail with messages about failing checkstyle.
+
+
+
+
+A2 Step Two: Coding style and javadoc comments
+  
+    Coding style has an enormous impact on the maintainability and readability of code.  
+    These things impact how easy it is to make additions to code and to find bugs.    
+    One of the learning outcomes for this assignment is to create maintainable code.   
+    We'll start that by  using a linter to ensure that we have followed the course coding style conventions.    
+    The linter we are using is called checkstyle.
+
+   ✔ Once you have typed gradle build,  your project will probably fail with checkstyle errors
+    
+   ✔ Checkstyle creates a nicely formatted web page that describes each error and has the file/line
+    ✔ location of the error in the build folder of your project.  
+    ✔ Look in build/reports/checkstyle and open main.html with a browser
+    
+   ✔ The top part of the webpage lists each file with errors.  The bottom part describes each error in a single file (whichever one you clicked on the top) and gives you the line number.
+    
+   ✔ The names of the errors are descriptive enough that you should be able to fix them without much trouble.  Ask for hints in #general if you are stuck.
+
+ ✔   Checkstyle will also require you to create javadoc comments .  Javadoc comments are used to generate the documentation that we use to learn about the abilities of library classes. 
+   ✔     Only public methods must have comments.   You may make methods protected if they are not used by other classes.  Do not make any required methods private.
+    ✔    For this class you must have javadoc comments for classes and methods but not fields
+     ✔   This tutorial is very helpful for understanding what goes into a javadoc comment.
+    ✔    A screenshot of the webpage produced by checkstyle
+
+
+
+A2 Step Three:  Refactoring classes, New class, JSON additions
+
+Refactoring
+✔ A large part of being a successful programmer is being able to create well designed programs that are easy to maintain and extend.   
+
+✔ An object oriented program is better if each class and method are as short as possible and do exactly one thing (Single Responsibility), and if each action is accomplished in exactly one place.   This is why it is best practice to create setters for member variables and then always use the setter to change the value of the variable. 
+ ✔ In A2 we will begin refactoring your code to improve the design.
+
+   ✔  When using a third party library like the json simple library, it is often good idea to write a specific class to interact with the library.    
+   ✔  This way you can limit the effect on your program should the library change.    
+    ✔  We are going to pull all of the json parsing into a single class called RogueParser for A2.   
+     ✔ The Rogue game should have an instance of RogueParser as a member variable and the game can be set up using that 
+    ✔  instance variable.      
+    ✔  I've attached a version of RogueParser that will work on A1 json.  
+    ✔  You may use it if you wish, or you can write your own.    
+    ✔  Complete this step and make sure it is running before you move on.
+    
+    
+   ✔  The mechanism for managing doors was vague and now we should make it better.   
+   ✔  Refactor your code to use a HashMap to store the location of a door.   
+   ✔  I'd recommend starting with a HashMap<String, Integer> and refactoring your A1 code to use it.   
+   ✔  We're going to add a door class in the next step, so you will refactor this again, but it is less error prone in two steps
+
+
+Exceptions
+In A2 you need to start handling errors in input.  
+  The only errors that will be tested are errors in the logical layout of the dungeon,
+   so the parser should not be the place that these errors are caught and handled.    
+   Use exceptions in your code to handle the following errors:
+
+ ✔ create an void addItem(Item toAdd) method in Room.java  From that  method:
+     ✔ throw an ImpossiblePositionException if an item is placed on a wall, door, on top of an existing element
+     ✔  (item or player) or outside the boundaries of the room.    The catch clause for when this exception is caught 
+    ✔   should adjust the position of the item to an empty tile and then try again.
+    ✔  throw a NoSuchItemException if an item id is present in a room but does not exist in the list of items.  
+    ✔  The catch clause for this exception should ensure that the item ID is removed from the rooms list of items.
+    
+
+✔ create a boolean verifyRoom() method in Room.java that returns true if the room is complete 
+✔ (items in valid places, player in valid place if in room, all doors have a connection), false otherwise.  From this method
+  ✔   throw a NotEnoughDoorsException if a room does not have at least one door. In this case the room should have 
+    ✔ a single door added randomly to the room and connected to a second room that does not already have four doors.   
+   ✔  If this is impossible, the program should exit with a message that the dungeon file cannot be used.
+
+
+✔ Input JSON changes
+✔ The input JSON file has had some additions to provide more types of items as well as information about the connections facilitated by doors.   A door description now looks like this:
+
+✔ {
+  ✔                   "dir": "N",
+    ✔                 "con_room": 1,
+      ✔               "wall_pos": 3
+        ✔ }
+
+
+✔ the old ID tag has been replaced with "wall_pos".    A new tag, "con_room"  shows which room that door connects to.  
+✔  For this assignment the connections will always be properly paired in the json file.   
+ ✔ You will need to modify the parser slightly to accommodate this new json format.  
+
+✔ Additional item types have been added and the character map keys have been updated to reflect the new item types.   Item descriptions have also been added.  You will need to modify the parser slightly to work with these fields.  An example of the rooms.json file and the symbols.json file are attached.
+
+
+✔  Door Class
+✔  To facilitate player movement, we must maintain information about which rooms are connected by each door.  
+ ✔  We will do this using a Door.java class.
+✔  Door.java must have the following public methods:
+
+✔  public Door() //default constructor
+✔  public void connectRoom(Room r);  //specify one of the two rooms that can be attached to a door
+✔  public ArrayList<Room> getConnectedRooms();  //get an Arraylist that contains both rooms connected by this door
+✔  public Room getOtherRoom(Room currentRoom); //get the connected room by passing in the current room.  i.e.  I am in the kitchen:  door.getOtherRoom(kitchen) returns dining room.
+
+✔  We will guarantee that no door has more than two rooms attached to it.
+
+
+
+
+A2 Step Four:  Lanterna UI and Player Movement
+﻿﻿.
+We will be using a library called lanterna to facilitate movement around the terminal screen.   
+The attached zip file contains a working example of using the library.
+
+Required Functionality
+   ✔   The player must begin in the room noted as the starting room
+   ✔   The player must be able to move around the room
+    ✔  The player must not be able to move through walls
+    ✔  Moving through a door should transport the player to a connected room
+    ✔ Moving over items should cause the item to disappear.  You may implement an inventory for the player and add the
+   ✔   item to the inventory, but an inventory is not required for A2.
+   ✔   The sample files provide the functionality to use the arrow keys for navigation. Please keep that functionality. 
+    ✔   Add at least one more set of navigation keys and document them in your readme.  
+   ✔   You may add any additional single character commands you wish.  Document in your readme.
+
+
+
+Required Methods
+  ✔    all classes must have a default (zero parameter) constructor
+  ✔    TextUI.java must have the following methods
+    ✔      ﻿public void putString(String toDisplay, int column, int row)
+   ✔       public void setMessage(String msg)
+   ✔       public void draw(String message, String room)
+    ✔      public char getInput()
+
+  ✔    Rogue.java must have the following methods
+         public Rogue(RogueParser theDungeonInfo) //single parameter constructor
+    ✔      public String makeMove(char input) throws InvalidMoveException. //calculates the next display, but does not return it.  It returns a message for the player.  getNextDisplay() must be called to get the display string.
+✔          public String getNextDisplay() //returns the updated display string after a move has been made
+✔          public void addRoom(Map<String, String> toAdd). //for setting up the game.  Adds a room to the game using the map provided by RogueParser
+✔          public void addItem(Map<String,String> toAdd). //for setting up the game.  Adds an item to the game using the map provided by RogueParser. 
+﻿
+
+Notes
+
+ ✔     All member variables must be private
+   ✔   The sample project has a member variable called nextDisplay in Rogue that you probably will not need.  \
+   ✔   It is there to make the demo work.
+ ✔     You are encouraged to use additional methods
+ ✔     Getters and Setters may be public or package-private.
+ ✔     We will use an automated test harness as part of the grading.  Do not change method signatures.
+ ✔     RogueParser.java had one additional error on line 265
+   ✔       line 265 should be:  item.put("room", itemLocation.get("room"));
+    ✔      attached files have been fixed.
+
