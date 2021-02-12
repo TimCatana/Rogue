@@ -29,6 +29,7 @@ Classic arrow keys navigation convention
 <br>
 <br>
 &nbsp; &nbsp; &nbsp;- The 4 symbols above should be left untouched
+<br>
 &nbsp; &nbsp; &nbsp;- Feel free to modify any other symbol in *symbols.json*
 
 ## items
