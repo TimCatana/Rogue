@@ -8,28 +8,27 @@ Timothy Catana
 ## Navigation
 
 Classic "wasd" navigation convention<br>
-&nbsp; &nbsp; &nbsp;*W* = move up<br>
-&nbsp; &nbsp; &nbsp;*A* = move left<br>
-&nbsp; &nbsp; &nbsp;*S* = move down<br>
-&nbsp; &nbsp; &nbsp;*D* = move right
+*"W"* = move up<br>
+*"A"* = move left<br>
+*"S"* = move down<br>
+*"D"* = move right
 <br>
 Classic arrow keys navigation convention<br>
-&nbsp; &nbsp; &nbsp;*↑* = move up<br>
-&nbsp; &nbsp; &nbsp;*←* = move left<br>
-&nbsp; &nbsp; &nbsp;*→* = move down<br>
-&nbsp; &nbsp; &nbsp;*↓* = move right
+*"↑"* = move up<br>
+*"←"* = move left<br>
+*"→"* = move down<br>
+*"↓"* = move right
 
 ## Symbols
 
-&nbsp; &nbsp; &nbsp;*"|"* = wall<br>
-&nbsp; &nbsp; &nbsp;*"_"* = wall<br>
-&nbsp; &nbsp; &nbsp;*"+"* = door<br>
-&nbsp; &nbsp; &nbsp;*"."* = floor
+*"|"* = wall<br>
+*"_"* = wall<br>
+*"+"* = door<br>
+*"."* = floor
 <br>
+- The 4 symbols above should be left untouched
 <br>
-&nbsp; &nbsp; &nbsp;- The 4 symbols above should be left untouched
-<br>
-&nbsp; &nbsp; &nbsp;- Feel free to modify any other symbol in *symbols.json*
+- Feel free to modify any other symbol in *symbols.json*
 
 ## items
 
