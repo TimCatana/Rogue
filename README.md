@@ -7,18 +7,17 @@ Timothy Catana
 
 ## Navigation
 
-Classic "wasd" navigation convention
-&nbsp; &nbsp; &nbsp;*W* = move up
-&nbsp; &nbsp; &nbsp;*A* = move left
-&nbsp; &nbsp; &nbsp;*S* = move down
+Classic "wasd" navigation convention<br>
+&nbsp; &nbsp; &nbsp;*W* = move up<br>
+&nbsp; &nbsp; &nbsp;*A* = move left<br>
+&nbsp; &nbsp; &nbsp;*S* = move down<br>
 &nbsp; &nbsp; &nbsp;*D* = move right
 <br>
-Classic arrow keys navigation convention
-&nbsp; &nbsp; &nbsp;*↑* = move up
-&nbsp; &nbsp; &nbsp;*←* = move left
-&nbsp; &nbsp; &nbsp;*→* = move down
+Classic arrow keys navigation convention<br>
+&nbsp; &nbsp; &nbsp;*↑* = move up<br>
+&nbsp; &nbsp; &nbsp;*←* = move left<br>
+&nbsp; &nbsp; &nbsp;*→* = move down<br>
 &nbsp; &nbsp; &nbsp;*↓* = move right
-<br>
 
 ## Symbols
 
