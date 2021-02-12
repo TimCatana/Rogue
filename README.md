@@ -13,6 +13,7 @@ Classic "wasd" navigation convention<br>
 *"S"* = move down<br>
 *"D"* = move right
 <br>
+<br>
 Classic arrow keys navigation convention<br>
 *"↑"* = move up<br>
 *"←"* = move left<br>
