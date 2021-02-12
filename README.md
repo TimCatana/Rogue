@@ -27,7 +27,6 @@ Classic arrow keys navigation convention<br>
 *"."* = floor
 <br>
 - The 4 symbols above should be left untouched
-<br>
 - Feel free to modify any other symbol in *symbols.json*
 
 ## items
