@@ -37,8 +37,8 @@ Classic arrow keys navigation convention<br>
 - Items are not usable
 
 ## Doors
-> A) All rooms have at least one door                     
-> B) All unused (unconnected) doors that were parsed from the rooms JSON were deleted  
+- All rooms have at least one door                     
+- All unused (unconnected) doors that were parsed from the rooms JSON were deleted  
 
 # Instructions 
 
@@ -51,14 +51,14 @@ Classic arrow keys navigation convention<br>
 
 ## Preperation
 
-#### fileLocations.json
+### fileLocations.json
 make sure that in the A2 folder you have a valid **fileLocations.json** that contains the locations of the json files **rooms.json** and **symbols.json**.  
 
-#### rooms.json
-makesure that in the A2 you have a valid **rooms.json** that is written in the correct format shown in your cloned folder
+### rooms.json
+makesure that in the A2 folder you have a valid **rooms.json** that is written in the correct format shown in your cloned folder
 
-#### rooms.json
-makesure that in the A2 you have a valid **symbols.json** that is written in the correct format shown in your cloned folder
+### rooms.json
+makesure that in the A2 folder you have a valid **symbols.json** that is written in the correct format shown in your cloned folder
 
 ## Build
 `gradle build`
