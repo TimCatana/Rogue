@@ -22,14 +22,14 @@ Classic arrow keys navigation convention
 
 ## Symbols
 
-&nbsp; &nbsp; &nbsp;*|* = wall<br>
-&nbsp; &nbsp; &nbsp;*_* = wall<br>
-&nbsp; &nbsp; &nbsp;*+* = door<br>
-&nbsp; &nbsp; &nbsp;*.* = floor
+&nbsp; &nbsp; &nbsp;*"|"* = wall<br>
+&nbsp; &nbsp; &nbsp;*"_"* = wall<br>
+&nbsp; &nbsp; &nbsp;*"+"* = door<br>
+&nbsp; &nbsp; &nbsp;*"."* = floor
 <br>
 <br>
-- The 4 symbols above should be left untouched
-- Feel free to modify any other symbol in *symbols.json*
+&nbsp; &nbsp; &nbsp;- The 4 symbols above should be left untouched
+&nbsp; &nbsp; &nbsp;- Feel free to modify any other symbol in *symbols.json*
 
 ## items
 
@@ -38,10 +38,8 @@ Classic arrow keys navigation convention
 - Items are not usable
 
 ## Doors
-> A) All rooms have at least one door
-<br>
+> A) All rooms have at least one door                     
 > B) All unused (unconnected) doors that were parsed from the rooms JSON were deleted  
-
 
 # Instructions 
 
